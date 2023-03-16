@@ -11,12 +11,13 @@ function Login({token,setToken}){
     const [show, setShow] = React.useState(false)
    const [err,setErr] = useState(false)
     const [upload,setUpload] = useState(false)
- 
+   const [loading,setLoading] = useState(false)
   const handleClick = () => setShow(!show)
 
     const handleSubmit = (event) => {
         event.preventDefault()
         setUpload(false)
+        setLoading(true)
         const payload = {
             email,
             password,
@@ -32,13 +33,15 @@ function Login({token,setToken}){
         .then((res) => res.json())
         .then((res) => {
             console.log("check",res)
+            setLoading(false)
             setUpload(true);
-            
+           
             if(res.token){
                 setTimeout(() => {
                  localStorage.setItem("fundflo", res.token);
                 setToken(res.token)
-                }, 3000);
+                
+                }, 2000);
             }else{
                 setErr(true)
             }
@@ -57,6 +60,12 @@ function Login({token,setToken}){
                 <AlertIcon />
                 <AlertTitle>invalid credentials</AlertTitle>
                 <AlertDescription>Try again.</AlertDescription>
+              </Alert> : ""
+            }
+            {
+                loading == true ? <Alert status='info'>
+                <AlertIcon />
+                <AlertTitle>Loading....</AlertTitle>
               </Alert> : ""
             }
             {

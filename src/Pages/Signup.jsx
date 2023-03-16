@@ -8,13 +8,14 @@ function Register(){
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
-   
+    const [loading,setLoading] = useState(false)
     const [upload,setUpload] = useState(false)
     const navigate = useNavigate()
     const handleClick = () => setShow(!show)
 
     const handleSubmit = (event) => {
         event.preventDefault()
+        setLoading(true)
         setUpload(false)
         const payload = {
             email,
@@ -31,6 +32,7 @@ function Register(){
         })
         .then((res) => res.json())
         .then((res) => {
+            setLoading(false)
             setUpload(true);
             setTimeout(()=>{navigate('/')},3000)
   
@@ -48,6 +50,12 @@ function Register(){
                 <AlertDescription>Try another email.</AlertDescription>
               </Alert> : ""
             } */}
+            {
+                loading == true ? <Alert status='info'>
+                <AlertIcon />
+                <AlertTitle>Loading....</AlertTitle>
+              </Alert> : ""
+            }
 
             {
                 upload==true ?<Alert status='success' variant='subtle'>

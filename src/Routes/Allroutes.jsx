@@ -15,9 +15,7 @@ export default function Allroutes(){
         <Routes>
             <Route path="/" element={
                 token ? <Order token={token} setToken={setToken} />  :  <Login token={token} setToken={setToken}/> 
-            
             }/>
-            {/* <Route path="/login" element={<Login/>}/> */}
             <Route path="/register" element={<Register/>}/>
             <Route path='/invoice' element={<Invoice/>}/>
             <Route path="/payment" element={<Payment/>}/>
