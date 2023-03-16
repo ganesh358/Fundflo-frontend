@@ -58,10 +58,10 @@ export default function Payment(){
             
           
           <Tabs mt='2rem' onChange={(index) => setTabIndex(index)} bg={bg}>
-            <TabList gap='10rem'>
-                <Tab>Pay with Debit/Credit/ATM Cards</Tab>
-                <Tab>Other UPI Apps</Tab>
-                <Tab>Cash On Delivery/Pay On Delivery</Tab>
+            <TabList  gap='10rem'>
+                <Tab fontWeight='bold'>Pay with Debit/Credit/ATM Cards</Tab>
+                <Tab fontWeight='bold'>Other UPI Apps</Tab>
+                <Tab fontWeight='bold'>Cash On Delivery/Pay On Delivery</Tab>
             </TabList>
             <TabPanels p='2rem'>
                 <TabPanel>

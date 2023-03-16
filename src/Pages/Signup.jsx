@@ -22,7 +22,7 @@ function Register(){
             name
         }
 
-        fetch("http://localhost:8080/user/signup",{
+        fetch("https://fundflo-backend.onrender.com/user/signup",{
             method : "POST",
             headers: {
                 'Content-Type': 'application/json',
