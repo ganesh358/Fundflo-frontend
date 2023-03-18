@@ -1,5 +1,6 @@
-import { Box, Button, Flex, Grid, Img, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, Img, SimpleGrid, Text} from "@chakra-ui/react";
 import { Link, useNavigate } from "react-router-dom";
+import Report from "../component/Report";
 import { orderData } from "./data";
 // console.log(orderData)
  
@@ -28,7 +29,8 @@ const handleLogout = () => {
         <SimpleGrid>
              <Flex pr='4rem' pl='3rem' alignItems='center' justifyContent='space-between'><Img  w='8rem' src='https://media.licdn.com/dms/image/C560BAQHfHCEgvxmU3w/company-logo_200_200/0/1648792369353?e=1686787200&v=beta&t=fJ-FVIhJFGPYflmeSnEz0a9M5fA5T-OpPLInGNyq6nQ'/><Button _hover="none" color='white' bgColor='blue.500' onClick={handleLogout}>Logout</Button></Flex>
           <Text fontWeight='bold' fontSize='2xl' textAlign='center'>Your Orders</Text>
-       
+      
+       <Flex fontWeight='bold' color='blue' pr='8rem' justifyContent='flex-end'><a href="#report">See Report</a></Flex>
      
      <SimpleGrid p='4rem' gridGap='2rem'>
      {orderData.map((item) => <Grid boxShadow='rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px'  border='1px solid black' key={item.id}>
@@ -40,7 +42,7 @@ const handleLogout = () => {
                 <Text fontWeight='bold'>{item.title}</Text>
                 <Text>{item.category}</Text>
                 <Text>Rs:{item.price}</Text>
-                <Button bgColor='gold' w='6rem' onClick={()=> handleBuy(item)}>By it again</Button>
+                <Button bgColor='gold' w='6rem' onClick={()=> handleBuy(item)}>Buy it again</Button>
             </Grid>
            
             </Flex>
@@ -50,6 +52,10 @@ const handleLogout = () => {
             </Flex>
      </Grid>)}
      </SimpleGrid>
+     <Grid scrollBehavior='smooth' id="report" justifyContent='center'>
+        <Text fontWeight='bold' fontSize='2xl' textAlign='center'>Report</Text>
+        <Report/>
+     </Grid>
 
         </SimpleGrid>
     )

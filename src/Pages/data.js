@@ -8,7 +8,7 @@ export const orderData = [
         image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
         GSTRno  : " 29AAQCS4259Q1Z6",
         OrderNumber:"403-2982097-7717905",
-        OrderDate: "04.03.2023",
+        OrderDate: "14.03.2023",
         InvoiceNumber : "BLR7-6466451",
         InvoiceDetails : "KA-BLR7-1004-1819",
         },
@@ -21,7 +21,7 @@ export const orderData = [
         image: "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
         GSTRno : " 29AAQCS4259Q1Z6",
         OrderNumber:"403-2982097-7717905",
-        OrderDate: "04.03.2023",
+        OrderDate: "15.03.2023",
        InvoiceNumber : "BLR7-6466451",
        InvoiceDetails : "KA-BLR7-1004-1819",
       
@@ -98,3 +98,24 @@ export const orderData = [
         },
        
 ]
+
+export const Data = [
+  {
+    id: 1,
+    curdata: "Daily",
+    Orders: 3,
+   
+  },
+  {
+    id: 2,
+    curdata: "Week",
+    Orders: 5,
+    
+  },
+  {
+    id: 3,
+    curdata: "Month",
+    Orders: 7,
+   
+  },
+];

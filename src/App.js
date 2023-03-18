@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react';
 
 import Allroutes from './Routes/Allroutes';
-import Order from './Pages/Order';
+
 
 function App() {
   return (
