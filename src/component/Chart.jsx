@@ -8,7 +8,7 @@ export const BarChart = ({ chartData }) => {
           plugins: {
             title: {
               display: true,
-              text: "User orders report in daily, Week and Month"
+              text: ""
             },
             legend: {
               display: false
